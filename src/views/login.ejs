@@ -18,7 +18,7 @@
                         <div class="col-lg">
                             <h4>faça seu login</h4>
                             <p>...</p>
-                            <form action="/login/home" method="POST">
+                            <form class="form-login" action="/login/home" method="POST">
                                 <input type="hidden" name="_csrf" value="<%= csrfToken %>">
 
                                 <div class="form-group">
@@ -36,7 +36,7 @@
                         <div class="col-lg">
                             <h4>faça seu cadastro!</h4>
                             <p>crie uma conta</p>
-                            <form action="/login/register" method="POST">
+                            <form class="form-cadastro" action="/login/register" method="POST">
                                 <input type="hidden" name="_csrf" value="<%= csrfToken %>">
 
                                 <div class="form-group">
