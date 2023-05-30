@@ -1,0 +1,53 @@
+<%- include('includes/head') %>
+    <%- include('includes/navbar') %>
+
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2"></div>
+
+                <div class="col-lg-8 my-3">
+                    <h1 class="display-1 text-center">Contatos</h1>
+                    <p class="text-center lead">Crie ou edite seus contatos !</p>
+
+                    <%- include('./includes/menssages') %>
+
+                        <% if (contato._id) {%>
+                        <form action="/contatos/edit/<%= contato._id %>" method="POST">
+                        <% } else { %>
+                        <form action="/contatos/register" method="POST">
+                        <% } %>
+
+                            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+
+                            <div class="form-group">
+                                <label>Digite o nome:</label>
+                                <input value="<%= contato.nome %>" type="text" class="form-control" name="nome" id="">
+                            </div>
+                            <div class="form-group">
+                                <label>Digite o sobrenome:</label>
+                                <input value="<%= contato.sobrenome %>" type="text" class="form-control"
+                                    name="sobrenome" id="">
+                            </div>
+                            <div class="form-group">
+                                <label>Digite o email:</label>
+                                <input value="<%= contato.email %>" type="email" class="form-control" name="email"
+                                    id="">
+                            </div>
+                            <div class="form-group">
+                                <label>Digite o telefone:</label>
+                                <input value="<%= contato.telefone %>" type="tel" class="form-control" name="telefone" id="">
+                            </div>
+
+                            <button type="submit" class="btn btn-primary">Salvar</button>
+                        </form>
+
+
+
+                </div>
+
+                <div class="col-lg-2"></div>
+            </div>
+        </div>
+
+        <%- include('includes/footer') %>
