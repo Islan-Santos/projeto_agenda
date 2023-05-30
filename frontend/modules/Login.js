@@ -12,6 +12,6 @@ export default class Login {
         this.form.addEventListener('submit', e => {
             e.preventDefault();
             alert('F');
-        })
+        });
     }
 }
